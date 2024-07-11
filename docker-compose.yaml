@@ -1,0 +1,15 @@
+services:
+  goodbuy-config:
+    image: 'goodbuy-image'
+    build:
+      context: .
+    container_name: 'goodbuy-container'
+    ports:
+      - "80:80"
+    environment:
+      - SPRING_PROFILES_ACTIVE=development
+    networks:
+      - goodbuy-network
+networks:
+  goodbuy-network:
+    external: true
